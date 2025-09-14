@@ -1,42 +1,50 @@
+# Ejercicio 1: Explorando matrices y operaciones básicas
+
 import numpy as np
 
-# 1. Crear una matriz A de 3x3 con números enteros del 1 al 9
-A = np.array([
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-])
+# 1. Importa la librería NumPy como np
+print("Matriz A original:")
 
-print("Matriz A original:\n", A)
+# 2. Crea una matriz A de 3x3 con números enteros del 1 al 9
+A = np.array([[1, 2, 3],
+              [4, 5, 6], 
+              [7, 8, 9]])
+print(A)
 
-# 2. Sumar 10 a cada elemento de la matriz
-A_suma = A + 10
-print("\nMatriz A + 10:\n", A_suma)
+# 3. Realizar las siguientes operaciones:
 
-# 3. Multiplicar la matriz por 2
-A_mult = A * 2
-print("\nMatriz A * 2:\n", A_mult)
+# Suma 10 a cada elemento de la matriz
+suma_resultado = A + 10
+print("\nSuma 10 a cada elemento:")
+print(suma_resultado)
 
-# 4. Seleccionar los elementos mayores a 5
+# Multiplica la matriz por 2
+mult_resultado = A * 2
+print("\nMultiplica por 2:")
+print(mult_resultado)
+
+# Extrae los elementos mayores a 5 utilizando selección condicional
 mayores_5 = A[A > 5]
-print("\nElementos mayores a 5:\n", mayores_5)
+print("\nElementos mayores a 5:")
+print(mayores_5)
 
-# 5. Referencia vs copia
-# Caso 1: referencia
+# 4. Asigna la matriz a una nueva variable B = A y modifica un valor de B
 B = A
-B[0, 0] = 100   # modificamos un elemento
-print("\nDespués de modificar B (referencia):")
-print("Matriz A:\n", A)
-print("Matriz B:\n", B)
+print("\nMatriz A antes de modificar B:")
+print(A)
 
-# Caso 2: copia real
-A = np.array([
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-])  # restauramos A
+B[0, 0] = 100
+print("\nDespués de B[0, 0] = 100:")
+print("A:", A)
+print("B:", B)
+
+# Ahora con copia
+A = np.array([[1, 2, 3],
+              [4, 5, 6], 
+              [7, 8, 9]])
+
 C = A.copy()
 C[0, 0] = 200
-print("\nDespués de modificar C (copia):")
-print("Matriz A:\n", A)
-print("Matriz C:\n", C)
+print("\nCon A.copy():")
+print("A:", A)
+print("C:", C)

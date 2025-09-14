@@ -1,33 +1,53 @@
 import numpy as np
 
-np.random.seed(42)  # para que los aleatorios sean reproducibles
-
-# 1) arange(1, 17) -> reshape a 4x4
+# 1. Crea un arreglo x con np.arange(1, 17) y redimensionalo en una matriz de 4x4
 x = np.arange(1, 17)
-X = x.reshape(4, 4)
-print("Matriz X (4x4, desde 1 a 16):\n", X)
+print("Arreglo x original:")
+print(x)
 
-# 2) linspace de 10 puntos equidistantes entre 0 y 100
-v = np.linspace(0, 100, 10)
-print("\nVector v (10 valores 0..100):\n", v)
+matriz_4x4 = x.reshape(4, 4)
+print("\nMatriz 4x4:")
+print(matriz_4x4)
 
-# 3) matriz aleatoria 3x3 con enteros 1..20
-A = np.random.randint(1, 21, size=(3, 3))
-print("\nMatriz A aleatoria (enteros 1..20):\n", A)
+# 2. Genera un arreglo de 10 elementos equidistantes entre 0 y 100 usando np.linspace()
+elementos_equidistantes = np.linspace(0, 100, 10)
+print("\nArreglo de 10 elementos equidistantes entre 0 y 100:")
+print(elementos_equidistantes)
 
-# 4) aplicar sqrt y log 
+# 3. Crea una matriz aleatoria de 3x3 con enteros entre 1 y 20 usando np.random.randint()
+matriz_aleatoria = np.random.randint(1, 20, (3, 3))
+print("\nMatriz aleatoria 3x3 (enteros entre 1 y 20):")
+print(matriz_aleatoria)
 
-X_sqrt = np.sqrt(X)
-X_log  = np.log(X.astype(float))    
-A_sqrt = np.sqrt(A)
-A_log  = np.log(A.astype(float))
+# 4. Aplica np.sqrt() y np.log() sobre las matrices creadas (cuando sea posible)
+print("\nAplicando np.sqrt() a la matriz 4x4:")
+sqrt_matriz = np.sqrt(matriz_4x4)
+print(sqrt_matriz)
 
-print("\n√X:\n", X_sqrt)
-print("\nlog(X):\n", X_log)
-print("\n√A:\n", A_sqrt)
-print("\nlog(A):\n", A_log)
+print("\nAplicando np.log() a la matriz 4x4:")
+log_matriz = np.log(matriz_4x4)
+print(log_matriz)
 
-# 5) Nota rápida sobre enteros vs flotantes
-print("\nDtypes:")
-print("X:", X.dtype, "| √X:", X_sqrt.dtype, "| log(X):", X_log.dtype)
-print("A:", A.dtype, "| √A:", A_sqrt.dtype, "| log(A):", A_log.dtype)
+print("\nAplicando np.sqrt() a la matriz aleatoria:")
+sqrt_aleatoria = np.sqrt(matriz_aleatoria)
+print(sqrt_aleatoria)
+
+print("\nAplicando np.log() a la matriz aleatoria:")
+log_aleatoria = np.log(matriz_aleatoria)
+print(log_aleatoria)
+
+# 5. ¿Qué diferencias notas en la forma de aplicar funciones sobre arreglos enteros vs flotantes?
+print("\n5. Diferencias entre arreglos enteros vs flotantes:")
+print("Arreglo entero original:", matriz_aleatoria.dtype)
+print("Resultado sqrt (flotante):", sqrt_aleatoria.dtype)
+print("Resultado log (flotante):", log_aleatoria.dtype)
+
+# Comparación adicional
+arreglo_entero = np.array([1, 4, 9, 16])
+arreglo_flotante = np.array([1.0, 4.0, 9.0, 16.0])
+
+print("\nEjemplo con enteros:", arreglo_entero.dtype)
+print("Sqrt de enteros:", np.sqrt(arreglo_entero), "- tipo:", np.sqrt(arreglo_entero).dtype)
+
+print("\nEjemplo con flotantes:", arreglo_flotante.dtype)
+print("Sqrt de flotantes:", np.sqrt(arreglo_flotante), "- tipo:", np.sqrt(arreglo_flotante).dtype)
