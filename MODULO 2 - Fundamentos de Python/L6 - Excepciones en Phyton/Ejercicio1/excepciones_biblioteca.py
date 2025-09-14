@@ -1,7 +1,6 @@
 # excepciones_biblioteca.py
 # Ejercicio 1 - Préstamo simple en una biblioteca
 # Clase 6 Módulo 2: Excepciones en Python
-# Estilo Jose
 
 # Excepción personalizada
 class LibroNoDisponibleError(Exception):
