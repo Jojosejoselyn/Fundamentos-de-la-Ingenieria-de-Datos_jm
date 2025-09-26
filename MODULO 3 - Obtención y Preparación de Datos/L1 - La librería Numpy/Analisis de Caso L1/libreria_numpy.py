@@ -3,7 +3,7 @@ import numpy as np
 # Para que siempre tengamos los mismos resultados
 np.random.seed(42)
 
-print("=== WORKING TIME - DESAFÍO NUMPY ===")
+print("=== ANALISIS DE CASO - LIBRERIA NUMPY ===")
 print()
 
 # Sección 1: Creación y manipulación de arrays
@@ -114,4 +114,4 @@ print("\nCantidad de valores mayores a 5:", len(mayores_5))
 print("Raíz cuadrada de los primeros 10 valores mayores a 5:")
 print(raiz_mayores_5[:10])
 
-print("\n=== DESAFÍO COMPLETADO ===")
+print("\n=== ANÁLISIS COMPLETADO ===")
